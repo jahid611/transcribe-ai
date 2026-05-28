@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Check, Sparkles, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,14 @@ interface MeResponse {
 }
 
 export default function BillingPage() {
+  return (
+    <Suspense fallback={<div className="text-muted-foreground">Chargement…</div>}>
+      <BillingContent />
+    </Suspense>
+  );
+}
+
+function BillingContent() {
   const api = useApi();
   const sp = useSearchParams();
   const upgraded = sp.get('upgraded');

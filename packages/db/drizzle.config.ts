@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import type { Config } from 'drizzle-kit';
 
 const url = process.env.TURSO_DATABASE_URL ?? 'file:./local.db';
