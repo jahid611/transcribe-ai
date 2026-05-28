@@ -1,0 +1,24 @@
+name = "transcribe-ai-api"
+main = "src/index.ts"
+compatibility_date = "2024-11-12"
+compatibility_flags = ["nodejs_compat"]
+
+[dev]
+port = 8787
+
+[vars]
+STUB = "false"
+APP_URL = "http://localhost:3000"
+LLM_PRIMARY = "groq"
+LLM_FALLBACK = "openrouter"
+LLM_EMERGENCY = "together"
+
+# Secrets à pousser avec:
+#   wrangler secret put CLERK_SECRET_KEY
+#   wrangler secret put GROQ_API_KEY
+#   wrangler secret put OPENROUTER_API_KEY
+#   wrangler secret put TOGETHER_API_KEY
+#   wrangler secret put TURSO_DATABASE_URL
+#   wrangler secret put TURSO_AUTH_TOKEN
+#   wrangler secret put STRIPE_SECRET_KEY
+#   wrangler secret put STRIPE_WEBHOOK_SECRET
