@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+.next/
+dist/
+out/
+.turbo/
+.vercel/
+.wrangler/
+
+# env
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# misc
+*.tsbuildinfo
+.eslintcache
+coverage/
+.cache/
+
+# db
+*.db
+*.db-journal
+local.db*
