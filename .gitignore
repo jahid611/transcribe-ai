@@ -41,3 +41,4 @@ coverage/
 *.db
 *.db-journal
 local.db*
+.dev.vars
