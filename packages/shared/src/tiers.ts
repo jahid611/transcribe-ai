@@ -4,8 +4,8 @@ export const TIER_LIMITS = {
   free: {
     maxSessionDurationSec: 30 * 60,
     maxSessionsPerDay: 5,
-    maxFileSizeMB: 0,
-    canUploadFile: false,
+    maxFileSizeMB: 25,
+    canUploadFile: true,
     canExportPdf: false,
     canExportDocx: false,
     llmCostCapUsd: 0.3,
@@ -14,7 +14,7 @@ export const TIER_LIMITS = {
   pro: {
     maxSessionDurationSec: Infinity,
     maxSessionsPerDay: 100,
-    maxFileSizeMB: 500,
+    maxFileSizeMB: 2048,
     canUploadFile: true,
     canExportPdf: true,
     canExportDocx: true,

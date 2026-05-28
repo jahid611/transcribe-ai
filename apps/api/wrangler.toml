@@ -9,9 +9,17 @@ port = 8787
 [vars]
 STUB = "false"
 APP_URL = "http://localhost:3000"
+API_URL = "http://localhost:8787"
 LLM_PRIMARY = "groq"
 LLM_FALLBACK = "openrouter"
 LLM_EMERGENCY = "together"
+
+# Cloudflare R2 — stockage des fichiers audio uploadés.
+# Créer le bucket : wrangler r2 bucket create transcribe-ai-audio
+[[r2_buckets]]
+binding = "AUDIO_BUCKET"
+bucket_name = "transcribe-ai-audio"
+preview_bucket_name = "transcribe-ai-audio-dev"
 
 # Secrets à pousser avec:
 #   wrangler secret put CLERK_SECRET_KEY
@@ -22,3 +30,6 @@ LLM_EMERGENCY = "together"
 #   wrangler secret put TURSO_AUTH_TOKEN
 #   wrangler secret put STRIPE_SECRET_KEY
 #   wrangler secret put STRIPE_WEBHOOK_SECRET
+#   wrangler secret put QSTASH_TOKEN
+#   wrangler secret put QSTASH_CURRENT_SIGNING_KEY
+#   wrangler secret put QSTASH_NEXT_SIGNING_KEY

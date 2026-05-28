@@ -1,6 +1,10 @@
 export interface Env {
   STUB?: string;
   APP_URL: string;
+  API_URL?: string;
+
+  // R2 bucket (binding défini dans wrangler.toml). Optionnel en mode STUB/local.
+  AUDIO_BUCKET?: R2Bucket;
 
   CLERK_SECRET_KEY: string;
   CLERK_PUBLISHABLE_KEY: string;
@@ -25,4 +29,9 @@ export interface Env {
 
   QSTASH_TOKEN?: string;
   QSTASH_CURRENT_SIGNING_KEY?: string;
+  QSTASH_NEXT_SIGNING_KEY?: string;
+}
+
+export function isStub(env: Env): boolean {
+  return env.STUB === 'true';
 }
